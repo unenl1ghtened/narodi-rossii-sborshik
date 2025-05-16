@@ -1,0 +1,27 @@
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 34px;
+  padding: 16px 27px;
+  max-width: 229px;
+  font-weight: 600;
+  font-size: 16px;
+  color: #fff;
+  background-color: var(--accent-color);
+  transition: var(--transition);
+
+  &:hover {
+    background: #25395f;
+  }
+
+  &:active {
+    background: #25395f;
+  }
+
+  &-2 {
+    gap: 26px;
+    align-self: end;
+    margin-left: auto;
+  }
+}
