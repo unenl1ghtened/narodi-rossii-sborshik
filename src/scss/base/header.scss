@@ -33,6 +33,7 @@
 }
 
 .logo {
+  z-index: 15;
   display: flex;
   gap: 20px;
   align-items: center;
@@ -77,8 +78,8 @@
     right: 0;
     left: 0;
     z-index: 10;
-    padding: 6vh 15px 30px;
-    height: 350px;
+    padding: 100px 15px 80px;
+    height: auto;
     font-size: 24px;
     background: var(--general-bg);
     opacity: 0;
@@ -132,6 +133,7 @@
 }
 
 .socials {
+  z-index: 15;
   display: flex;
   gap: 26px;
   align-items: center;

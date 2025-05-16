@@ -1,0 +1,55 @@
+.abc {
+  padding-top: 110px;
+  padding-bottom: 80px;
+
+  @include mobile {
+    padding-top: 80px;
+    padding-bottom: 60px;
+  }
+
+  &__inner {
+    display: flex;
+    gap: clamp(10px, 2vw, 35px);
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    @include mini-desktop {
+      justify-content: center;
+    }
+  }
+
+  &__list-wrapper {
+    display: flex;
+    gap: clamp(6px, 3vw, 42px);
+    margin-bottom: 40px;
+    max-width: 270px;
+  }
+
+  &__list-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    padding: 10px 25px;
+    width: 68px;
+    height: 68px;
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 1.125;
+    color: var(--general-bg);
+    background-color: var(--accent-color);
+  }
+
+  &__list {
+    padding-top: 15px;
+  }
+
+  &__item:not(:last-child) {
+    margin-bottom: 16px;
+  }
+
+  &__item a {
+    line-height: 1.2;
+  }
+}

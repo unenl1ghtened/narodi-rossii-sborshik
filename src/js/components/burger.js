@@ -7,6 +7,8 @@ export const useBurger = () => {
     const burgerIcon = e.target.closest('.burger-icon');
     const burgerNavLink = e.target.closest('.nav__link');
 
+    e.preventDefault();
+
     function closeMenu() {
       document.body.classList.remove('body--opened-menu');
       overflow?.classList.remove('active');

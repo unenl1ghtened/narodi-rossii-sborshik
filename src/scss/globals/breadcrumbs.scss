@@ -1,6 +1,12 @@
 .breadcrumbs {
   padding-top: 50px;
   padding-bottom: 50px;
+  color: var(--general-text);
+
+  @include small-tablet {
+    padding-top: 25px;
+    padding-bottom: 25px;
+  }
 
   &__list {
     display: flex;
