@@ -1,0 +1,22 @@
+.breadcrumbs {
+  padding-top: 50px;
+  padding-bottom: 50px;
+
+  &__list {
+    display: flex;
+
+    li:not(:last-child) {
+      transition: var(--transition);
+
+      &::after {
+        content: '/';
+        margin-right: 4px;
+        margin-left: 6px;
+      }
+
+      :hover {
+        font-weight: 600;
+      }
+    }
+  }
+}
