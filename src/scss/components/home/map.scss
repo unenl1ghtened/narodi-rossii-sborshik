@@ -1,0 +1,31 @@
+/* =======MAP========== */
+
+.map {
+  &__descr {
+    margin-bottom: 81px;
+    max-width: 600px;
+  }
+
+  &__image-cont {
+    margin-bottom: 84px;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    @include small-tablet {
+      margin-bottom: 44px;
+    }
+
+    @include small-mobile {
+      margin-bottom: 14px;
+    }
+  }
+
+  &__image-descr {
+    color: #383838;
+  }
+}

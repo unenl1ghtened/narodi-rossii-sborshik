@@ -1,0 +1,130 @@
+/* ========FOOTER========= */
+
+.footer {
+  &__top-inner {
+    position: relative;
+    display: flex;
+    gap: 56px;
+    flex-direction: column;
+    align-items: center;
+    border-top: 1px #9e9e9e solid;
+    border-bottom: 1px #9e9e9e solid;
+    padding-top: 70px;
+    padding-bottom: 40px;
+
+    @include mobile {
+      gap: 40px;
+      padding-top: 50px;
+      padding-bottom: 20px;
+    }
+  }
+
+  &__logo {
+    gap: 22px;
+    margin-bottom: 2px;
+    font-size: 32px;
+
+    img {
+      width: 100px;
+      height: 100px;
+
+      @include mobile {
+        width: 70px;
+        height: 70px;
+      }
+    }
+
+    @include mobile {
+      gap: 12px;
+      font-size: 27px;
+    }
+  }
+
+  &__nav-list {
+    display: flex;
+    gap: 99px;
+    font-weight: 500;
+    font-size: 20px;
+
+    @include small-tablet {
+      gap: 11vw;
+    }
+
+    @include small-mobile {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  &__nav-link {
+    transition: var(--transition);
+
+    &:hover {
+      font-weight: 600;
+    }
+  }
+
+  &__socials {
+    gap: 20px;
+
+    svg {
+      width: 36px;
+      height: 36px;
+    }
+
+    path {
+      fill: #6d6d6d;
+    }
+  }
+
+  &__top-btn {
+    position: absolute;
+    top: 17px;
+    right: 0;
+    border: 1px solid var(--accent-color);
+    border-radius: 50%;
+    padding: 30px 39px;
+    transition: var(--transition);
+
+    &:hover {
+      background: var(--accent-color);
+
+      path {
+        stroke: #fff;
+      }
+    }
+
+    @include small-tablet {
+      padding: 20px 30px;
+    }
+
+    @include mobile {
+      padding: 18px 26px;
+
+      svg {
+        height: 30px;
+      }
+    }
+
+    @include small-mobile {
+      top: initial;
+      bottom: 17px;
+    }
+  }
+
+  &__bottom-inner {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 22px;
+    padding-bottom: 12px;
+    font-weight: 500;
+    color: #6d6d6d;
+
+    @include mobile {
+      justify-content: center;
+    }
+  }
+}

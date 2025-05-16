@@ -1,0 +1,117 @@
+/* =======STORIES======== */
+
+.stories {
+  background: url('../../../assets/img/decor/Vector.svg') no-repeat;
+  background-position: 50% 70%;
+  background-size: contain;
+
+  &__slider {
+    position: relative;
+    margin: 0 auto;
+    width: 100%;
+
+    &-wrapper {
+      margin-bottom: 60px;
+
+      @include small-tablet {
+        margin-bottom: 40px;
+      }
+    }
+
+    &-btn-cont {
+      display: flex;
+      gap: 28px;
+      align-items: center;
+      justify-content: flex-end;
+      margin-bottom: 26px;
+
+      @include small-tablet {
+        gap: 3vw;
+        margin-bottom: 14px;
+      }
+    }
+
+    &-button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid #000;
+      border-radius: 50%;
+      width: 61px;
+      height: 61px;
+      transition: var(--transition);
+      cursor: pointer;
+
+      &:hover {
+        border: none;
+        background: var(--accent-color);
+
+        path {
+          fill: var(--general-bg);
+        }
+      }
+
+      @include mobile {
+        padding: 0;
+        width: 51px;
+        height: 51px;
+      }
+    }
+  }
+
+  &__slide {
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--border-radius);
+    width: auto !important;
+    cursor: pointer;
+
+    img {
+      display: block;
+      width: auto;
+      height: auto;
+      object-position: center;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background: linear-gradient(180deg, #16161600 0%, #000 100%);
+      opacity: 0;
+      transition: var(--transition);
+    }
+
+    &:hover::before {
+      opacity: 1;
+    }
+
+    &-info {
+      position: absolute;
+      bottom: 0;
+      z-index: 2;
+      padding: 38px 28px;
+      font-weight: 500;
+      font-size: 15px;
+      color: #fff;
+      opacity: 0;
+      transition: var(--transition);
+    }
+
+    &-title {
+      margin-bottom: 13px;
+      font-weight: 700;
+      font-size: 20px;
+    }
+
+    &-descr {
+      max-width: 300px;
+    }
+
+    /* stylelint-disable-next-line selector-class-pattern */
+    &:hover .stories__slide-info {
+      opacity: 1;
+    }
+  }
+}

@@ -20,6 +20,30 @@ html {
 
   &--opened-menu {
     overflow: hidden;
+
+    .nav {
+      @include small-tablet {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0%);
+      }
+    }
+
+    .burger-icon {
+      span {
+        background: transparent;
+
+        &::before {
+          top: 0;
+          transform: rotate(45deg);
+        }
+
+        &::after {
+          bottom: 0;
+          transform: rotate(-45deg);
+        }
+      }
+    }
   }
 }
 

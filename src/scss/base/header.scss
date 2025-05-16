@@ -1,0 +1,149 @@
+.header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 10;
+  background: var(--general-bg);
+
+  &__inner {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px #9e9e9e solid;
+    padding-top: 32px;
+    padding-bottom: 24px;
+
+    @include tablet {
+      gap: 6vw;
+      padding-top: 12px;
+      padding-bottom: 14px;
+    }
+  }
+
+  &__left {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 573px;
+  }
+}
+
+.logo {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: 900;
+  font-size: 18px;
+  color: #37599b;
+
+  img {
+    width: 38px;
+    height: 38px;
+  }
+}
+
+.nav {
+  &__list {
+    display: flex;
+    gap: 44px;
+    font-weight: 500;
+
+    @include tablet {
+      gap: 2vh 30px;
+    }
+
+    @include small-tablet {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  &__link {
+    transition: var(--transition);
+
+    &:hover {
+      font-weight: 600;
+    }
+  }
+
+  @include small-tablet {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 10;
+    padding: 6vh 15px 30px;
+    height: 350px;
+    font-size: 24px;
+    background: var(--general-bg);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-50%);
+    transition: var(--transition);
+  }
+}
+
+.burger-icon {
+  z-index: 15;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+
+  @include small-tablet {
+    display: flex !important;
+  }
+
+  span {
+    position: relative;
+    display: block;
+    border-radius: 100px;
+    width: 30px;
+    height: 3px;
+    background: var(--general-text);
+    transition: var(--transition);
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      display: block;
+      border-radius: 100px;
+      width: 30px;
+      height: 3px;
+      background: var(--general-text);
+      transition: var(--transition);
+    }
+
+    &::before {
+      top: -10px;
+    }
+
+    &::after {
+      bottom: -10px;
+    }
+  }
+}
+
+.socials {
+  display: flex;
+  gap: 26px;
+  align-items: center;
+  justify-content: center;
+
+  svg {
+    width: 45px;
+    height: 45px;
+
+    @include tablet {
+      width: 32px;
+      height: 32px;
+    }
+  }
+}

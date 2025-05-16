@@ -1,0 +1,72 @@
+.tests {
+  background: url('../img/decor/Vector-2.svg') no-repeat;
+  background-position: 50% 70%;
+  background-size: contain;
+
+  &__block-list {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 60px;
+
+    @include small-tablet {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__block {
+    overflow: hidden;
+    border-radius: var(--border-radius);
+    padding: 25px 25px 45px;
+    height: 450px;
+    max-width: 420px;
+    background: #fff;
+    cursor: pointer;
+
+    &-descr {
+      margin-top: 24px;
+      margin-bottom: 37px;
+      font-weight: 500;
+      opacity: 0;
+      visibility: hidden;
+      transition: var(--transition);
+    }
+
+    &-title {
+      font-weight: 700;
+      font-size: 20px;
+    }
+
+    &-btn {
+      opacity: 0;
+      visibility: hidden;
+      transition: var(--transition);
+    }
+
+    &-image {
+      margin-bottom: 37px;
+      border-radius: var(--border-radius);
+      width: 100%;
+      height: 305px;
+      object-fit: cover;
+      object-position: center top;
+      transition: var(--transition);
+    }
+  }
+}
+
+/* stylelint-disable-next-line selector-class-pattern */
+.tests__block:hover .tests__block-image {
+  height: 166px;
+  object-fit: cover;
+}
+
+/* stylelint-disable-next-line selector-class-pattern */
+.tests__block:hover .tests__block-descr,
+/* stylelint-disable-next-line selector-class-pattern */
+.tests__block:hover .tests__block-btn {
+  opacity: 1;
+  visibility: visible;
+}
