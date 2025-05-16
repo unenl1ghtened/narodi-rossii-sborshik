@@ -31,6 +31,9 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: './src/index.html',
+        biography: './src/biography.html',
+        nationality: './src/nationality.html',
+        tests: './src/tests.html',
       },
       output: {
         entryFileNames: 'assets/js/[name].js', // Размещение JS в папке assets/js/
