@@ -115,6 +115,15 @@
     font-weight: 600;
     font-size: 48px;
     line-height: 1.4583;
+
+    @include tablet {
+      font-size: 44px;
+      line-height: 1.1;
+    }
+
+    @include mobile {
+      font-size: 38px;
+    }
   }
 
   &__subtitle {
@@ -142,6 +151,11 @@
     margin-top: 30px;
     margin-bottom: 20px;
     margin-left: 10px;
+
+    @include tablet {
+      margin-top: 20px;
+      margin-bottom: 10px;
+    }
   }
 
   &__item {
@@ -165,7 +179,7 @@
 
   &__double-image {
     display: flex;
-    gap: clamp(8px, 4vw, 44px);
+    gap: 8px;
     flex-wrap: wrap;
     justify-content: space-between;
   }
@@ -187,6 +201,10 @@
       height: 89px;
       background: var(--general-bg);
       transform: translateX(50%) translateY(-50%);
+
+      svg {
+        padding-left: 5px;
+      }
     }
   }
 
@@ -194,16 +212,28 @@
   &__img-text,
   &__text {
     margin-bottom: 40px;
+
+    @include tablet {
+      margin-bottom: 30px;
+    }
   }
 }
 
 .hero,
 .text-block {
   margin-bottom: 60px;
+
+  @include tablet {
+    margin-bottom: 50px;
+  }
 }
 
 .w-420 {
   max-width: 420px;
+}
+
+.max-w-440 {
+  max-width: 440px;
 }
 
 .tests {
