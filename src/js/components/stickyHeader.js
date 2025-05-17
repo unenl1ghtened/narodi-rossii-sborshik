@@ -3,14 +3,14 @@ export const useStickyHeader = () => {
   if (!header) return;
 
   const headerHeight = header.offsetHeight;
+
+  // Отступ для .hero или первой section
   const heroSection = document.querySelector('.hero');
   const allSections = Array.from(document.querySelectorAll('section'));
 
   if (heroSection && allSections[0] === heroSection) {
-    // .hero существует и она первая — добавляем отступ ей
     heroSection.style.marginTop = `${headerHeight}px`;
   } else {
-    // Ищем первую section (не header), которой можно задать отступ
     const firstContentSection = allSections.find(
       (section) => !section.classList.contains('header'),
     );
@@ -18,8 +18,14 @@ export const useStickyHeader = () => {
     if (firstContentSection) {
       firstContentSection.style.marginTop = `${headerHeight}px`;
     } else {
-      // На крайний случай — добавим отступ всему body
       document.body.style.marginTop = `${headerHeight}px`;
     }
+  }
+
+  // Добавляем top для sticky-сайдбара
+  const sidebarNav = document.querySelector('.sidebar__nav');
+  if (sidebarNav) {
+    sidebarNav.style.position = 'sticky';
+    sidebarNav.style.top = `${headerHeight + 25}px`;
   }
 };

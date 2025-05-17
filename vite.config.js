@@ -32,7 +32,7 @@ export default defineConfig({
       input: {
         main: './src/index.html',
         biography: './src/biography.html',
-        nationality: './src/nationality.html',
+        nations: './src/nations.html',
         tests: './src/tests.html',
       },
       output: {

@@ -1,4 +1,4 @@
-import '/scss/tests.scss';
+import '/scss/nations-open.scss';
 
 // components
 import { useBurger } from './components/burger';
