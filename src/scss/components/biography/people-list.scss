@@ -1,4 +1,16 @@
 .people-list {
+  background: url('../../../assets/img/decor/Vector.svg') no-repeat;
+  background-position: center 35%;
+  background-size: contain;
+
+  @include mini-desktop {
+    background-position: center 25%;
+  }
+
+  @include small-tablet {
+    background: none;
+  }
+
   &__tags {
     margin-bottom: 40px;
   }
