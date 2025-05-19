@@ -1,6 +1,41 @@
 import { defineConfig } from 'vite';
 import injectHTML from 'vite-plugin-html-inject';
 import { ViteImageOptimizer } from 'vite-plugin-image-optimizer';
+import { resolve } from 'path';
+import fs from 'fs';
+import path from 'path';
+
+// Функция рекурсивного поиска всех .html файлов внутри src
+function getHtmlEntries(dirPath) {
+  const entries = {};
+
+  function walk(currentPath) {
+    const items = fs.readdirSync(currentPath);
+
+    for (const item of items) {
+      const fullPath = path.join(currentPath, item);
+      const stat = fs.statSync(fullPath);
+
+      // Пропускаем папку 'html' внутри src
+      if (stat.isDirectory()) {
+        // Исключаем src/html и всё, что внутри неё
+        const relative = path.relative('src', fullPath).replace(/\\/g, '/');
+        if (relative.startsWith('html')) continue;
+
+        walk(fullPath);
+      } else if (stat.isFile() && item.endsWith('.html')) {
+        const name = path
+          .relative('src', fullPath)
+          .replace(/\\/g, '/')
+          .replace(/\.html$/, '');
+        entries[name] = resolve(__dirname, fullPath);
+      }
+    }
+  }
+
+  walk(dirPath);
+  return entries;
+}
 
 export default defineConfig({
   css: {
@@ -23,36 +58,26 @@ export default defineConfig({
     emptyOutDir: true,
     assetsDir: 'assets',
     minify: false,
-    terserOptions: {
-      format: {
-        comments: true, // сохраняет все комментарии
-      },
-    },
     rollupOptions: {
-      input: {
-        main: './src/index.html',
-        biography: './src/biography.html',
-        nations: './src/nations.html',
-        tests: './src/tests.html',
-      },
+      input: getHtmlEntries(path.resolve(__dirname, 'src')),
       output: {
-        entryFileNames: 'assets/js/[name].js', // Размещение JS в папке assets/js/
-        chunkFileNames: 'assets/js/[name].js', // Размещение чанков в папке assets/js/
+        entryFileNames: 'assets/js/[name].js',
+        chunkFileNames: 'assets/js/[name].js',
         assetFileNames: (assetInfo) => {
-          if (/\.(png|jpg|jpeg|gif|svg)$/i.test(assetInfo.name)) {
-            return 'assets/images/[name][extname]'; // Изображения в assets/images/
+          if (/\.(png|jpe?g|gif|svg)$/i.test(assetInfo.name)) {
+            return 'assets/images/[name][extname]';
           }
           if (/\.(woff2?|ttf|otf|eot)$/i.test(assetInfo.name)) {
-            return 'assets/fonts/[name][extname]'; // Шрифты в assets/fonts/
+            return 'assets/fonts/[name][extname]';
           }
-          if (/\.(css)$/i.test(assetInfo.name)) {
-            return 'assets/css/[name][extname]'; // CSS в assets/css/
+          if (/\.css$/i.test(assetInfo.name)) {
+            return 'assets/css/[name][extname]';
           }
-          return 'assets/[name][extname]'; // Для остальных файлов
+          return 'assets/[name][extname]';
         },
         manualChunks(id) {
           if (id.includes('node_modules')) {
-            return 'vendor'; // Все сторонние модули будут в папке vendor
+            return 'vendor';
           }
         },
       },
@@ -61,12 +86,8 @@ export default defineConfig({
   plugins: [
     injectHTML(),
     ViteImageOptimizer({
-      png: {
-        quality: 80,
-      },
-      jpg: {
-        quality: 80,
-      },
+      png: { quality: 80 },
+      jpg: { quality: 80 },
     }),
   ],
 });
