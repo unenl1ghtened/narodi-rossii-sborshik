@@ -4,5 +4,6 @@ import '/scss/nations-open.scss';
 import { useBurger } from './components/burger';
 import { useStickyHeader } from './components/stickyHeader';
 
+
 useBurger();
 useStickyHeader();
