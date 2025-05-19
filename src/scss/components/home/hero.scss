@@ -3,6 +3,7 @@
 .hero {
   padding-top: 68px;
   padding-bottom: 210px;
+  color: var(--general-text);
 
   @include small-tablet {
     padding-bottom: 150px;
