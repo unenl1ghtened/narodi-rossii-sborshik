@@ -1,0 +1,54 @@
+.people-list {
+  &__tags {
+    margin-bottom: 40px;
+  }
+
+  &__list {
+    display: flex;
+    gap: 100px 20px;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    margin-bottom: 120px;
+
+    @include mini-desktop {
+      gap: 80px 20px;
+      justify-content: center;
+      margin-bottom: 100px;
+    }
+  }
+
+  &__show-more {
+    margin-right: auto;
+    margin-bottom: 100px;
+    margin-left: auto;
+
+    @include mini-desktop {
+      margin-bottom: 80px;
+    }
+  }
+
+  &__item {
+    max-width: 420px;
+
+    &-img {
+      margin-bottom: 10px;
+      border-radius: var(--border-radius);
+      transition: var(--transition);
+
+      &:hover {
+        box-shadow: -2px 4px 12px #37589ba9;
+      }
+    }
+
+    &-title {
+      margin-bottom: 16px;
+      font-weight: 700;
+      font-size: 20px;
+    }
+
+    &-descr {
+      max-width: 404px;
+      font-size: 16px;
+    }
+  }
+}

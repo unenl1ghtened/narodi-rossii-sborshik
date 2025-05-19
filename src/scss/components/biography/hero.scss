@@ -1,0 +1,66 @@
+.hero {
+  &--biog {
+    margin-bottom: 87px;
+  }
+
+  &__top {
+    &-descr--biog {
+      @include tablet {
+        flex-direction: column;
+        align-items: end;
+      }
+    }
+
+    &-left {
+      display: flex;
+      gap: 29px;
+      flex-shrink: 0;
+      align-items: flex-end;
+      min-width: 0;
+      max-width: 619px;
+
+      @include tablet {
+        flex-shrink: 1;
+        align-self: flex-start;
+      }
+    }
+  }
+
+  &__avatars {
+    display: flex;
+
+    @include tablet {
+      flex-shrink: 0;
+    }
+
+    &-item img {
+      border: none;
+      border-radius: 50%;
+      width: 68px;
+      height: 68px;
+
+      @include mobile {
+        width: 48px;
+        height: 48px;
+      }
+    }
+
+    &-item:not(:first-child) {
+      margin-left: -15%;
+    }
+  }
+
+  &__title--biog {
+    max-width: 469px;
+
+    @include tablet {
+      max-width: none;
+    }
+  }
+
+  &__descr {
+    &--biog {
+      max-width: 530px;
+    }
+  }
+}

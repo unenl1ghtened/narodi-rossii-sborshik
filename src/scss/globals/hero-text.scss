@@ -1,0 +1,36 @@
+.hero {
+  &__top-descr {
+    display: flex;
+    gap: 14px 20px;
+    align-items: end;
+    justify-content: space-between;
+
+    @include small-tablet {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+
+  &__descr {
+    max-width: 341px;
+
+    @include small-tablet {
+      align-self: flex-end;
+    }
+  }
+
+  &__title {
+    padding-top: 32px;
+    font-size: 70px;
+    line-height: 1;
+
+    @include tablet {
+      font-size: 46px;
+    }
+
+    @include small-tablet {
+      padding-top: 20px;
+      font-size: 40px;
+    }
+  }
+}
