@@ -104,7 +104,7 @@ export const useMapNew = () => {
 
   const oPopulation = {
     'RU-KYA': {
-      imgSrc: './assets/img/map/krasnoyarskij-kraj.png',
+      imgSrc: '../assets/img/krasnoyarskij-kraj.png',
       groups: [
         { group: 'Русские', number: '2 382 723 (93.6%)' },
         { group: 'Татары', number: '19 418 (0.8%)' },
