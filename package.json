@@ -25,6 +25,8 @@
     "vite-plugin-static-copy": "^3.0.0"
   },
   "dependencies": {
+    "hammerjs": "^2.0.8",
+    "jquery": "^3.7.1",
     "swiper": "^11.2.6"
   }
 }
