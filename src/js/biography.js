@@ -8,5 +8,5 @@ import { useShowMore } from './components/show-more';
 
 useBurger();
 useStickyHeader();
-useTagsFilter();
-useShowMore();
+useTagsFilter('.people-list__list', '.people-list__item');
+useShowMore(9, '.people-list__item', 'showMoreBtn');

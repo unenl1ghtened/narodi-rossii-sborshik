@@ -1,0 +1,9 @@
+.hero {
+  margin-bottom: 88px;
+
+  &__descr {
+    &--tests {
+      max-width: 530px;
+    }
+  }
+}
