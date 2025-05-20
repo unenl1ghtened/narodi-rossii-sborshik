@@ -276,7 +276,7 @@ export const useMapZoom = () => {
         updateLastPos();
         pinchCenter = null;
       });
-  
+
       hammer.on('doubletap', function (e) {
         var c = rawCenter(e);
         zoomAround(2, c.x, c.y);

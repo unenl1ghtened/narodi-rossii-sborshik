@@ -72,6 +72,12 @@ input {
 
 a {
   text-decoration: none;
+  touch-action: manipulation;
+}
+
+/* stylelint-disable-next-line selector-id-pattern */
+#ethnicMap_container {
+  touch-action: pan-x pan-y;
 }
 
 ul,
