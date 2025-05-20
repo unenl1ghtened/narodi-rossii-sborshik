@@ -3,9 +3,9 @@
 /* eslint-disable no-unused-vars */
 
 // испорт картинок
-import krasnoyarskImg from '../assets/images/krasnoyarskij-kraj.png';
-import krymImg from '../assets/images/respublika-krym.png';
-import tatarstanImg from '../assets/images/respublika-tatarstan.png';
+import krasnoyarskImg from '../../assets/img/map/krasnoyarskij-kraj.png';
+import krymImg from '../../assets/img/map/respublika-krym.png';
+import tatarstanImg from '../../assets/img/map/respublika-tatarstan.png';
 
 export const useMapNew = () => {
   var mapMode = 'region';
