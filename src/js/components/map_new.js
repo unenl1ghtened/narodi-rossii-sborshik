@@ -273,13 +273,4 @@ export const useMapNew = () => {
   window.addEventListener('resize', () => {
     hidePopup();
   });
-
-  // -------------
-  $(window).on('resize', function () {
-    if ($(window).width() <= 1024) {
-      $('body').addClass('mobile-mode').removeClass('desktop-mode');
-    } else {
-      $('body').removeClass('mobile-mode').addClass('desktop-mode');
-    }
-  });
 };
