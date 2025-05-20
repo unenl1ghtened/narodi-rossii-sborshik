@@ -11,6 +11,7 @@ export const useMapNew = () => {
   var min_li_size = 14;
   var max_li_size = 320;
 
+  // Кода регионов и их названия
   const oMap = {
     'RU-ALLMAP': 'Россия',
     'RU-RYA': 'Рязанская область',
@@ -99,12 +100,13 @@ export const useMapNew = () => {
     'RU-DA': 'Республика Дагестан',
     'RU-SE': 'Республика Северная Осетия - Алания',
   };
-  //console.info('oMap', oMap);
   // Данные по населению
 
   const oPopulation = {
+    // Ключ — это код региона (такой же, как в oMap)
     'RU-KYA': {
-      imgSrc: '../assets/img/krasnoyarskij-kraj.png',
+      // путь к изображению региона
+      imgSrc: '/assets/img/map/krasnoyarskij-kraj.png',
       groups: [
         { group: 'Русские', number: '2 382 723 (93.6%)' },
         { group: 'Татары', number: '19 418 (0.8%)' },
@@ -112,16 +114,42 @@ export const useMapNew = () => {
         { group: 'Азербайджанцы', number: '11 658 (0.5%)' },
       ],
     },
-    'RU-MOW': {
-      imgSrc: '/assets/img/map/moscow.png',
+    'RU-CR': {
+      imgSrc: '/assets/img/map/respublika-krym.png',
       groups: [
-        { group: 'Русские', number: '84%' },
-        { group: 'Татары', number: '3%' },
-        { group: 'Украинцы', number: '2%' },
-        { group: 'Азербайджанцы', number: '1%' },
+        { group: 'Русские', number: '1 296 442 (72.9%)' },
+        { group: 'Крымские татары', number: '250 651 (14.1%)' },
+        { group: 'Украинцы', number: '145 852 (2.3%)' },
+        { group: 'Татары', number: '28 363 (0.6%)' },
+      ],
+    },
+    'RU-TA': {
+      imgSrc: '/assets/img/map/respublika-tatarstan.png',
+      groups: [
+        { group: 'Татары', number: '2 091 175 (53.6%)' },
+        { group: 'Русские', number: '1 574 804 (40.3%)' },
+        { group: 'Чуваши', number: '90 474 (2.3%)' },
+        { group: 'Кряшены', number: '25 189 (0.6%)' },
       ],
     },
     // ... остальные регионы
+
+    // Чтобы добавить новый регион:
+    // 1. Найдите его код в списке выше (в oMap) — например, 'RU-ORE'
+    // 2. Скопируйте один из готовых блоков (например, 'RU-TA') и вставьте ниже
+    // 3. Измените ключ ('RU-ORE'), путь к изображению (imgSrc) и список групп
+
+    /*
+    Пример:
+    'RU-ORE': {
+      imgSrc: '/assets/img/map/orenburgskaya-oblast.png',
+      groups: [
+        { group: 'Русские', number: '1 000 000 (xx.x%)' },
+        { group: 'Казахи', number: '200 000 (xx.x%)' },
+        // и так далее
+      ],
+    },
+    */
   };
 
   const svgMap = document.querySelector('.js-svg-map');
@@ -229,8 +257,10 @@ export const useMapNew = () => {
       el.addEventListener('mouseleave', hidePopup);
     } else {
       el.addEventListener('click', (e) => {
-        e.preventDefault();
-        showPopup(el.id, e);
+        // Не блокируем переход по ссылкам, если внутри элемента есть <a>
+        if (!el.closest('a')) {
+          showPopup(el.id, e);
+        }
       });
     }
   });

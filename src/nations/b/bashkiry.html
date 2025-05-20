@@ -2,6 +2,17 @@
 <html lang="ru">
   <load src="../../html/base/head.html" title="Народы России" />
   <body class="body">
+    <!-- 
+  Чтобы создать новую страницу про другой народ:
+  1. Скопируйте этот HTML-файл.
+  2. Вставьте его в нужную папку с новым названием файла, например: tatary.html.
+  3. Отредактируйте:
+    - Название народа в заголовках (например, заменить "Башкиры" на "Татары").
+    - ID якорей и названия разделов (например, #religiya, #kultura и т.п.).
+    - Контент в тексте, списках и изображениях.
+    - Хлебные крошки (внизу <li> заменить название народа).
+  4. Готово! Теперь у вас новая страница на основе шаблона :)
+-->
     <div class="overflow"></div>
     <div class="wrapper">
       <load src="../../html/base/header.html" />
@@ -11,7 +22,9 @@
           <div class="container">
             <ul class="breadcrumbs__list">
               <li><a href="/">Главная</a></li>
-              <li>Народы</li>
+              <li><a href="/nations.html">Народы</a></li>
+              <!-- Замените на народ, которому создаёте страницу -->
+              <li>Башкиры</li>
             </ul>
           </div>
         </nav>
@@ -19,17 +32,32 @@
       <!-- =====ХЛЕБНЫЕ КРОШКИ КОНЕЦ==== -->
 
       <div class="container content">
-        <!-- =====САЙДБАР НАЧАЛО==== -->
+        <!-- =====НАВИГАЦИЯ СЛЕВА (САЙДБАР) НАЧАЛО==== -->
         <aside class="sidebar">
           <nav class="sidebar__nav">
             <ul class="sidebar__list">
+              <!-- 
+              Каждый пункт меню ниже — это ссылка, 
+              которая при нажатии прокручивает страницу к нужному разделу
+              -->
+
               <li class="sidebar__item">
-                <!-- #territoriya-i-chislennost это якорная ссылка, она ведет к тегу с id="territoriya-i-chislennost" -->
+                <!-- href="#territoriya-i-chislennost" означает, 
+                что эта ссылка ведет к элементу на странице с id="territoriya-i-chislennost" -->
+
+                <!-- Чтобы поменять текст, 
+                замените "Территория и численность" -->
+
+                <!-- Чтобы поменять ссылку, 
+                замените #territoriya-i-chislennost на другой id 
+                (и не забудьте поменять id в самом разделе) -->
+
                 <a class="sidebar__link" href="#territoriya-i-chislennost"
                   >Территория и численность</a
                 >
               </li>
               <li class="sidebar__item">
+                <!-- Аналогично: ссылка ведет к разделу с id="religiya" -->
                 <a class="sidebar__link" href="#religiya">Религия</a>
               </li>
               <li class="sidebar__item">
@@ -56,6 +84,7 @@
           <section class="hero">
             <div class="hero__inner">
               <h1 class="hero__title">Башкиры</h1>
+              <!-- Картинка в шапке. Чтобы заменить изображение, замените путь в src на путь к вашему изображению -->
               <img
                 class="hero__img"
                 src="../../assets/img/content/hero-bg/b/baskiri.png"
@@ -65,7 +94,8 @@
           </section>
           <!-- =====ШАПКА КОНЕЦ==== -->
 
-          <!-- у этого блока отступ вниз 60px -->
+          <!-- Ниже находится текстовый блок с описанием -->
+          <!-- Чтобы добавить новый такой блок, скопируйте <div class="text-block"> и вставьте ниже -->
           <div class="text-block">
             Башкиры — тюркский народ, коренное население Республики
             Башкортостан. Исторически сформировавшись в условиях уральского
@@ -73,12 +103,8 @@
             которых остаются актуальными и в современном обществе.
           </div>
 
-          <div class="text-block">
-            <!-- отступ вниз 40px -->
-            <h2 class="text-block__title" id="territoriya-i-chislennost">
-              Территория и численность
-            </h2>
-            <!-- отступ вниз 18px -->
+          <div class="text-block" id="territoriya-i-chislennost">
+            <h2 class="text-block__title">Территория и численность</h2>
             <img
               class="text-block__img"
               src="../../assets/img/content/nations/b/bashkiri/pole.jpg"
@@ -87,13 +113,16 @@
             <p class="text-block__img-text">
               Река Белая. Автор: Николай Сачков
             </p>
-            <!-- отступ вниз 40px -->
             <div class="text-block__text">
               По данным Всероссийской переписи населения 2020 года, общая
               численность башкир в России составляет  1 571 879 человек. За
               последние 10 лет их число сократилось на 2,4% (в 2010 году — 1 584
               554 чел.). Основная часть проживает в следующих регионах:
+
               <!-- список -->
+              <!-- Это маркированный список (со значками-точками) -->
+              <!-- Если вам нужно вставить такой же список в другой блок 
+              — скопируйте элемент <ul class="text-block__list"> вместе с <li> -->
               <ul class="text-block__list">
                 <li class="text-block__item">
                   Республика Башкортостан — 1 268 806 чел.
@@ -111,8 +140,8 @@
             </div>
           </div>
 
-          <div class="text-block">
-            <h2 class="text-block__title" id="religiya">Религия</h2>
+          <div class="text-block" id="religiya">
+            <h2 class="text-block__title">Религия</h2>
             Согласно Конституции Башкортостана, ни одна религия не может быть
             признана государственной. Однако большинство населения республики
             придерживается ислама суннитского направления.
@@ -158,8 +187,8 @@
             Уфе работает Исламский институт имени Р. Фахретдинова.
           </div>
 
-          <div class="text-block">
-            <h2 class="text-block__title" id="jazik">Язык</h2>
+          <div class="text-block" id="jazik">
+            <h2 class="text-block__title">Язык</h2>
             <div class="text-block__text">
               Башкирский язык имеет статус государственного в Республике
               Башкортостан, что закреплено в Конституции 1993 года.
@@ -253,8 +282,8 @@
             </p>
           </div>
 
-          <div class="text-block">
-            <h2 class="text-block__title" id="Byt">Быт</h2>
+          <div class="text-block" id="Byt">
+            <h2 class="text-block__title">Быт</h2>
             <!-- отступ вниз 30px -->
             <h4 class="text-block__subtitle">Хозяйство</h4>
             <p class="text-block__text">
@@ -367,8 +396,8 @@
             </p>
           </div>
 
-          <div class="text-block">
-            <h2 class="text-block__title" id="kultura">Культура</h2>
+          <div class="text-block" id="kultura">
+            <h2 class="text-block__title">Культура</h2>
             <h3 class="text-block__subtitle">Свадебные традиции</h3>
             <p class="text-block__text">
               В башкирской свадебной традиции исторически преобладал брак по
@@ -579,8 +608,8 @@
             <p class="text-block__img-text">Весенний праздник Каргатуй</p>
           </div>
 
-          <div class="text-block">
-            <h2 class="text-block__title" id="kuhnya">Кухня</h2>
+          <div class="text-block" id="kuhnya">
+            <h2 class="text-block__title">Кухня</h2>
             <p class="text-block__text">
               Кочевой образ жизни оставил отпечаток и на национальной кухне.
               Главными ее особенностями являются обилие мясных и долго
@@ -626,7 +655,7 @@
           </div>
 
           <div class="text-block">
-            <h2 class="text-block__title" id="test">Тест</h2>
+            <h2 class="text-block__title">Тест</h2>
             <p class="text-block__text">
               Пройдите увлекательный тест по прочитанному материалу и убедитесь,
               что хорошо запомнили ключевые факты о культуре, традициях и
