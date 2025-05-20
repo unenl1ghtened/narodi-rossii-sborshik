@@ -2,6 +2,11 @@
 /* eslint-disable no-undef */
 /* eslint-disable no-unused-vars */
 
+// испорт картинок
+import krasnoyarskImg from '../assets/images/krasnoyarskij-kraj.png';
+import krymImg from '../assets/images/respublika-krym.png';
+import tatarstanImg from '../assets/images/respublika-tatarstan.png';
+
 export const useMapNew = () => {
   var mapMode = 'region';
 
@@ -103,7 +108,7 @@ export const useMapNew = () => {
     // Ключ — это код региона (такой же, как в oMap)
     'RU-KYA': {
       // путь к изображению региона
-      imgSrc: '../assets/images/krasnoyarskij-kraj.png',
+      imgSrc: krasnoyarskImg,
       groups: [
         { group: 'Русские', number: '2 382 723 (93.6%)' },
         { group: 'Татары', number: '19 418 (0.8%)' },
@@ -112,7 +117,7 @@ export const useMapNew = () => {
       ],
     },
     'RU-CR': {
-      imgSrc: '../assets/images/respublika-krym.png',
+      imgSrc: krymImg,
       groups: [
         { group: 'Русские', number: '1 296 442 (72.9%)' },
         { group: 'Крымские татары', number: '250 651 (14.1%)' },
@@ -121,7 +126,7 @@ export const useMapNew = () => {
       ],
     },
     'RU-TA': {
-      imgSrc: '../assets/images/respublika-tatarstan.png',
+      imgSrc: tatarstanImg,
       groups: [
         { group: 'Татары', number: '2 091 175 (53.6%)' },
         { group: 'Русские', number: '1 574 804 (40.3%)' },
