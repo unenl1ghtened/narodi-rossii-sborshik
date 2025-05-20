@@ -1,6 +1,6 @@
 @import '../mixins/font-face';
-@include font-face(Caveat, Caveat-Regular, 400);
-@include font-face(Montserrat, Montserrat-Black, 900);
-@include font-face(Montserrat, Montserrat-Medium, 500);
-@include font-face(Montserrat, Montserrat-Regular, 400);
-@include font-face(Montserrat, Montserrat-SemiBold, 600);
+@include font-face(Caveat, CaveatRegular, 400);
+@include font-face(Montserrat, MontserratBlack, 900);
+@include font-face(Montserrat, MontserratMedium, 500);
+@include font-face(Montserrat, MontserratRegular, 400);
+@include font-face(Montserrat, MontserratSemiBold, 600);
